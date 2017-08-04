@@ -1,0 +1,90 @@
+<!-- Tala om att det är html-dokument -->
+<!DOCTYPE html>
+
+<!-- Alla element ska finnas inom html-taggen -->
+<html>
+<!-- I head placeras saker som inte är innehåll, tex css-filer och javascript -->
+<head>
+    <!-- Dessa 3 meta-taggar måste vara först i head för att alla tecken (åäö) och Bootstrap ska fungera korrekt -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Koppla in Bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <!-- Koppla in egen CSS-fil style.css OBS! Ha den som sista css-fil -->
+    <link rel="stylesheet" type ="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+    <!-- Koppla in och JQuery Bootstrap javascript -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <!-- Koppla in egen JavaScript-fil funktion.js OBS! Ha den som sista js-fil -->
+    <script type="text/javascript" src="js/funktion.js"></script>
+
+    <!-- I title skriver du titeln som webbläsarfönstret ska ha när den här sidan besöks-->
+    <title>Hemsidans titel</title>
+</head>
+
+<!-- I body finns allt innehåll på hemsidan -->
+<body>
+<nav class="nav navbar-inverse navbar-static-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">skönhetsbloggen</a>
+                <ul class="nav navbar-nav">
+                    <li><a href="menyval1.html">smink</a></li>
+                    <li><a href="menyval2.html">kläder</a></li>
+                    <li><a href="menyval3.html">hår</a></li>
+                    <li><a href="menyval4.html">trendigt</a></li>
+                    <li><a href="menyval5.html">tips</a></li>
+                </ul>
+            </div>
+        </nav>
+<h1>här kommer 5 snygga outfits för sommaren</h1>
+
+<h2>1. en jeans jacka och ett par jeans shorts</h3>
+
+ <h3>jackan finns att köpa på bikbok för 499:- och heter zizzi jacket. shortsen på ginatricot för 399:- och heter lola denim shorts. detta matshar till en tight croptop och ett par vita sneakers</h3>
+<img src="bilder/shorts3.jpg" width="25%">
+<img src="bilder/zissi jacket.jpg" width="30%">
+
+<h2>2. ett par håliga jeans och fishnet tights</h2>
+
+ <h3>jeansen finns att köpa på na-kd för 599:- och de heter distressed denim jeans. fishnet tightsen kan du köpa lite överallt men de finns framför allt på hm, lindex, cubus osv. det här passar till en magtröja och sneakers</h3> 
+<img src="bilder/aabbcc.jpg" width="30%">
+<img src="bilder/112233.jpg" width="37%">
+
+<h2>3. ett par byxor och en croptop</h2>
+
+<h3>byxorna finns att köpa på nelly för 299:- och heter crepe straight pants. croptopen finns att köpa på nelly också för 199:- detta passar till sneakers eller klackar</h3>
+<img src="bilder/www.jpg" width="30%">
+<img src="bilder/crop top.jpg" width="30%">
+
+<h2>4. ett par jeans och en polotröja</h2>
+
+<h3>jeansen finns att köpa på ginatricot för 399:- och heter iris mom jeans. polo tröjan finns att köpa på cubus för 199:- detta passar till sneakers</h3>
+<img src="bilder/gul.jpg" width="15%">
+<img src="bilder/jeans.jpg" width="15%">
+
+<h2>
+
+
+
+
+<div ng-controller="KommentarCtrl">
+<h2>Kommentarsfält</h2>
+<div ng-repeat="kommentar in kommentarer">
+    <p><b>{{ kommentar.skribent }}</b> {{ kommentar.text }}</p>
+</div>
+<form ng-submit="addComment()">
+    <div class="form-group">
+        <input placeholder="Ditt namn" type="text" class="form-control" ng-model="kommentar.skribent">
+    </div>
+    <div class="form-group">
+        <input placeholder="Din kommentar" type="text" class="form-control" ng-model="kommentar.text">
+    </div>
+    <button type="submit" class="btn btn-primary">Kommentera</button>
+</form>
+</div>
+</body>
+</html>

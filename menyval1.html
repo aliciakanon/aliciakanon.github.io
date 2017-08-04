@@ -1,0 +1,118 @@
+<!-- Tala om att det är html-dokument -->
+<!DOCTYPE html>
+
+<!-- Alla element ska finnas inom html-taggen -->
+<html>
+<!-- I head placeras saker som inte är innehåll, tex css-filer och javascript -->
+<head>
+    <!-- Dessa 3 meta-taggar måste vara först i head för att alla tecken (åäö) och Bootstrap ska fungera korrekt -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Koppla in Bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <!-- Koppla in egen CSS-fil style.css OBS! Ha den som sista css-fil -->
+    <link rel="stylesheet" type ="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+
+    <!-- Koppla in och JQuery Bootstrap javascript -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <!-- Koppla in egen JavaScript-fil funktion.js OBS! Ha den som sista js-fil -->
+    <script type="text/javascript" src="js/funktion.js"></script>
+
+    <!-- I title skriver du titeln som webbläsarfönstret ska ha när den här sidan besöks-->
+    <title>Hemsidans titel</title>
+</head>
+
+<!-- I body finns allt innehåll på hemsidan -->
+<body>
+<nav class="nav navbar-inverse navbar-static-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">skönhetsbloggen</a>
+                <ul class="nav navbar-nav">
+                    <li><a href="menyval1.html">smink</a></li>
+                    <li><a href="menyval2.html">kläder</a></li>
+                    <li><a href="menyval3.html">hår</a></li>
+                    <li><a href="menyval4.html">trendigt</a></li>
+                    <li><a href="menyval5.html">tips</a></li>
+                </ul>
+            </div>
+        </nav>
+       
+        <h1>smink</h1>
+
+  <h2>här kommer 10 sminkprodukter som är mina favoriter</h2>
+
+
+<h3>1. beauty blender</h3>
+
+<img src="bilder/16.png" width="30%">
+<h3>Fingrar som appliceringsverktyg i all ära, men den lilla rosa make up-svampen från Beautyblender är svårslagen. Formad som ett litet ägg funkar den att dölja finnar och skapa rosor på kinderna med. Eftersom den saknar kanter är risken för randig make up minimal</h3>
+
+
+<h3>2. Clinique 7 Day Scrub Cream</h3>
+<img src="bilder/17.png" width="20%">
+<h3>Glöm peelings med fjuttiga mikrokorn. Cliniques 7 Day Scrub Cream river rejält utan att irritera, tar bort döda hudceller och gör den redo för en eventuell ansiktsmask. Ett måste i badrumsskåpet</h3> 
+
+<h3>3. Yves Saint Laurent Touch Eclat No1</h3>
+<img src="bilder/18.png" width="30%">
+<h3>Yves Saint Laurents flerfaldigt prisbelönade concealer Touch Eclat har en given plats i necessären. Effektivare medel för mörka ringar under ögonen finns inte. Dyr men dryg</h3>
+
+<h3>4. Diorshow</h3>
+<img src="bilder/10.png" width="30%">
+<h3>Maxihylsan med maxiborsten är inte något för dig som gillar att spara på krutet. Har du relativt långa fransar får du garanterat lösögonfranseffekt av Diors Diorshow. </h3>
+
+<h3 style = "font-family: 'Julius Sans One', sans-serif;">5. Rosebudsalve</h3>
+<img src="bilder/11.png" width="30%">
+<h3>hollywoodkändisarna och modellernas hemliga skönhetsknep heter Rosebudsalve. En rosendoftande universalsalva som funkar från allt från ögonbrynsfixering till spruckna läppar</h3>
+
+<h3>7. Clinique City Block Sheer spf 15</h3>
+<img src="bilder/12.png" width="30%">
+<h3>Nästan 90% av hudens åldrande beror på solens strålning. Förhindra för tidigt åldrande genom att bära solskyddsfaktor varje dag. City Block Sheer har en lätt formula som inte klippar och passar perfekt under make upen</h3>
+
+<h3>8. Redken Extre Anti-Snap</h3>
+<img src="bilder/13.png" width="30%">
+<h3>För alla som missbrukar plattången finns räddning. Extreme Anti-Snap är en effektiv hårkur för skadat och poröst hår. Den proteinrika formulan bygger upp hårstrået. Dessutom doftar den supergott!</h3>
+
+<h3>9. DuWop Venom Gloss</h3>
+<img src="bilder/14.png" width="30%">
+<h3>Kanske beror det på den glasklara glansen, kanske på den lite ”stickande” känslan. Vad som i alla fall är säkert är att läpparna känns tillfälligt större. Venom Gloss är en partyfavorit och finns i flera fina färger. ”Lantana” ger de perfekta rosa läpparna – storfavorit på redaktionen!</h3>
+
+<h3>10. Clarins Beauty Flash Balm</h3>
+<img src="bilder/15.png" width="30%">
+<h3>Råd bot på glåmig hy och fina linjer med askungekrämen Beauty Flash Balm. Använd som ansiktsmask (applicera tunt och låt verka) eller som uppstramande primer. Ett måste innan och dagen efter festen.</h3>
+
+<h1>det här är i samarbete med veckorevyn där allt detta går att köpa. har själv allt och älskar det</h1>
+
+
+
+
+
+
+<div ng-controller="KommentarCtrl">
+<h2>Kommentarsfält</h2>
+<div ng-repeat="kommentar in kommentarer">
+    <p><b>{{ kommentar.skribent }}</b> {{ kommentar.text }}</p>
+</div>
+<form ng-submit="addComment()">
+    <div class="form-group">
+        <input placeholder="Ditt namn" type="text" class="form-control" ng-model="kommentar.skribent">
+    </div>
+    <div class="form-group">
+        <input placeholder="Din kommentar" type="text" class="form-control" ng-model="kommentar.text">
+    </div>
+    <button type="submit" class="btn btn-primary">Kommentera</button>
+</form>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
